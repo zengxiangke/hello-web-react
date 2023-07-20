@@ -1,2 +1,2 @@
 # hello-web-react
-Created with CodeSandbox
+Learn everything about web dev with react.
