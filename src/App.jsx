@@ -1,7 +1,5 @@
-import { TanStackQueryGetStarted } from "./learn/tanstack-query/get-started";
+import Demo from "./learn/tanstack-query/demos";
 import { useState } from "react";
-
-const Demo = TanStackQueryGetStarted;
 
 export default function App() {
   const [it, setIt] = useState(0);
