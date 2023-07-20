@@ -12,6 +12,7 @@ const apis = {
     if (age < 18) {
       throw new Error("not for kid");
     }
+    await sleep(3);
     return ["No more sex"];
   },
   async addBook(title: string) {
