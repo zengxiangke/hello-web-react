@@ -1,8 +1,11 @@
 import { TanStackQueryGetStarted } from "./learn/tanstack-query/get-started";
 import { useState } from "react";
 
+const Demo = TanStackQueryGetStarted;
+
 export default function App() {
   const [it, setIt] = useState(0);
+
   return (
     <div key={it}>
       <section>
@@ -14,7 +17,7 @@ export default function App() {
       </section>
       <main>
         {/* demos here */}
-        <TanStackQueryGetStarted />
+        <Demo />
       </main>
     </div>
   );
