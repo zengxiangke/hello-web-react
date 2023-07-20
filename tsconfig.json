@@ -1,4 +1,7 @@
 {
+  "include": [
+    "src/**/*"
+  ],
   "compilerOptions": {
     "outDir": "build/dist",
     "noEmit": true,
@@ -11,17 +14,9 @@
     "sourceMap": true,
     "allowJs": true,
     "jsx": "preserve",
-    "importsNotUsedAsValues": [
-      "react"
-    ],
     "moduleResolution": "node",
     "rootDir": "src",
     "forceConsistentCasingInFileNames": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true
+    "strict": true
   }
 }

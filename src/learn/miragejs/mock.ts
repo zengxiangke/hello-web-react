@@ -46,8 +46,8 @@ function buildServer() {
           id: "S001",
           name: "one"
         });
-        studentOne.newBook({ name: "book1" });
-        studentOne.newBook({ name: "book2" });
+        // studentOne.newBook({ name: "book1" });
+        // studentOne.newBook({ name: "book2" });
         studentOne.save();
 
         console.log(schema.db.dump());
