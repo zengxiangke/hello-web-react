@@ -9,6 +9,7 @@ import {
 } from "@tanstack/react-query";
 import { useState } from "react";
 import { apis } from "../apis";
+import { sleep } from "../../../shared/js-utils";
 
 // 1: build client
 const theQueryClient = new QueryClient();
@@ -213,6 +214,39 @@ function EnableQuery() {
 function GlobalFetchingIndicator() {
   const fetching = useIsFetching();
   return <div>{fetching ? "fetching..." : "idle"}</div>;
+}
+
+function Pagination() {
+  const [page, setPage] = useState(0);
+
+  const { status, fetchStatus, data, isFetching } = useQuery({
+    queryKey: ["page", page],
+    keepPreviousData: true,
+    queryFn: async () => {
+      await sleep(3);
+      const from = page * 10;
+      const to = from + 10;
+      const result = [];
+      for (let i = from; i < to; i++) {
+        result.push("book-" + i);
+      }
+      return result;
+    },
+  });
+
+  return (
+    <div>
+      <div>state: {JSON.stringify({ status, fetchStatus })}</div>
+      <button
+        onClick={() => {
+          setPage((old) => old + 1);
+        }}
+      >
+        next page
+      </button>
+      {data && data.map((item) => <div key={item}>{item}</div>)}
+    </div>
+  );
 }
 
 export default function Demo() {
